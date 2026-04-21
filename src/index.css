@@ -1,0 +1,26 @@
+/* 1. Consolidated Imports at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+/* 2. Map fonts to Tailwind variables */
+@theme {
+  --font-berkshire: "Berkshire Swash", serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+/* 3. Global Styles */
+body { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+    /* Setting Outfit as the default font for the whole app */
+    font-family: var(--font-outfit);
+    font-optical-sizing: auto;
+}
+
+/* Setting Berkshire Swash for all headings automatically */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-berkshire);
+}
