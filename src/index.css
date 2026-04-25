@@ -1,20 +1,17 @@
-
 @import "tailwindcss";
 
-/* 1. Import Google Fonts */
-
-
+/* 1. Import Premium Fonts */
 @theme {
   /* Heritage Palette */
-  --color-brand-primary: #1c1917;    /* Warm Stone/Black */
-  --color-brand-accent: #f97316;     /* Vibrant Orange */
-  --color-brand-gold: #ca8a04;       /* Heritage Gold */
-  --color-brand-surface: #ffffff;   /* Pure White */
-  --color-cement: #78716c;           /* Warm Grey */
+  --color-brand-primary: #1c1917;
+  --color-brand-accent: #f97316;
+  --color-brand-gold: #ca8a04;
+  --color-brand-surface: #ffffff;
+  --color-cement: #78716c;
 
   /* Typography */
   --font-outfit: "Outfit", sans-serif;
-  
+
 
   /* Spacing & Borders */
   --radius-saas: 1rem;
@@ -28,20 +25,27 @@
 }
 
 @layer base {
-  *, ::before, ::after {
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     background-color: var(--color-brand-surface);
     color: var(--color-brand-primary);
     font-family: var(--font-outfit);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
+}
 
+/* 2. Embla Functional Styles (MUST BE OUTSIDE LAYER BASE) */
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__container {
+  display: flex;
+  backface-visibility: hidden;
+  touch-action: pan-y;
+  margin-left: 0;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
 }
