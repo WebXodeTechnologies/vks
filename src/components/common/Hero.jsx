@@ -198,7 +198,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="mb-6 text-[#D4AF37] font-outfit font-semibold tracking-[0.15em] text-xs md:text-sm uppercase opacity-90"
+            className="mb-6 text-orange-400 font-outfit font-semibold tracking-[0.15em] text-xs md:text-sm uppercase opacity-90"
           >
             Mastering cement artistry since 1985
           </motion.p>
@@ -218,7 +218,7 @@ const Hero = () => {
 
           {/* Static Buttons Group */}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row pointer-events-auto">
-            <button className="group flex items-center gap-2 px-7 py-3 text-sm font-bold text-[#1C1917] transition-all bg-[#D4AF37] rounded-xl hover:bg-[#FAFAF9] hover:scale-105 active:scale-95 shadow-lg">
+            <button className="group flex items-center gap-2 px-7 py-3 text-sm font-bold text-[#1C1917] transition-all bg-orange-400 rounded-xl hover:bg-[#FAFAF9] hover:scale-105 active:scale-95 shadow-lg">
               Explore projects
               <HiOutlineArrowRight
                 size={16}

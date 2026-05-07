@@ -1,51 +1,91 @@
+/* 1. Corrected Google Fonts Import - Includes both Cinzel and Outfit */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
-/* 1. Import Premium Fonts */
 @theme {
-  /* Heritage Palette */
+  /* Heritage & SaaS Palette */
   --color-brand-primary: #1c1917;
   --color-brand-accent: #f97316;
   --color-brand-gold: #ca8a04;
-  --color-brand-surface: #ffffff;
+  --color-brand-surface: #fafaf9; /* Premium Stone/Bone-White */
   --color-cement: #78716c;
 
-  /* Typography */
-  --font-outfit: "Outfit", sans-serif;
+  /* Typography Variables */
+  --font-heritage: "Cinzel", serif;
+  --font-sans: "Outfit", sans-serif;
 
+  /* Layout & Borders */
+  --radius-saas: 2rem;
+  --radius-pill: 100px;
 
-  /* Spacing & Borders */
-  --radius-saas: 1rem;
-
-  /* Animations */
+  /* Custom Animations */
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  --animate-fade-up: fade-up 0.5s ease-out;
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes carousel-infinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  --animate-carousel-infinite: carousel-infinite 50s linear infinite;
 }
 
 @layer base {
+  * {
+    @apply border-stone-200;
+  }
+  
   body {
+    /* Outfit for body text as requested */
+    font-family: var(--font-sans);
     background-color: var(--color-brand-surface);
     color: var(--color-brand-primary);
-    font-family: var(--font-outfit);
-    -webkit-font-smoothing: antialiased;
+    @apply antialiased tracking-tight;
+  }
+
+  /* Headlines automatically use Cinzel */
+  h1, h2, h3, h4, .font-heritage {
+    font-family: var(--font-heritage);
+    @apply font-bold tracking-tight;
   }
 }
 
-/* 2. Embla Functional Styles (MUST BE OUTSIDE LAYER BASE) */
+@layer components {
+  /* Minimalist Plaque/Card Utility */
+  .plaque {
+    @apply bg-white p-5 rounded-2xl shadow-xl border border-stone-100;
+  }
+
+  /* Custom Scrollbar Hide */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* 2. Functional Styles for Sliders & Carousels */
 .embla {
   overflow: hidden;
   width: 100%;
 }
+
 .embla__container {
   display: flex;
   backface-visibility: hidden;
-  touch-action: pan-y;
-  margin-left: 0;
+  will-change: transform;
 }
+
 .embla__slide {
-  flex: 0 0 100%;
+  flex: 0 0 auto;
   min-width: 0;
-  position: relative;
+}
+
+/* Pause the infinite gallery carousel on hover */
+.pause-animation {
+  animation-play-state: paused !important;
 }
