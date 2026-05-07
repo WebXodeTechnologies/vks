@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
+      className={`fixed top-0 w-full z-100 transition-all duration-500 ${
         isScrolled || isOpen
           ? "bg-white/95 backdrop-blur-xl border-b border-stone-200 py-3 shadow-sm"
           : "bg-transparent py-6"
@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className="flex-1 lg:flex-none">
           <Link
             to="/"
-            className="relative z-[110] flex flex-col group"
+            className="relative z-110 flex flex-col group"
             aria-label="VKS Home"
           >
             <span className="text-xl sm:text-2xl font-bold tracking-tighter text-brand-primary">
@@ -98,7 +98,7 @@ const Navbar = () => {
 
         {/* MOBILE TOGGLE */}
         <button
-          className="relative z-[110] lg:hidden p-2 text-brand-primary ml-auto"
+          className="relative z-110 lg:hidden p-2 text-brand-primary ml-auto"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -113,7 +113,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 30 }}
-            className="fixed inset-0 bg-white z-[90] lg:hidden h-dvh flex flex-col pt-32 px-8"
+            className="fixed inset-0 bg-white z-90 lg:hidden h-dvh flex flex-col pt-32 px-8"
           >
             <div className="flex flex-col gap-8">
               {navLinks.map((link) => (
