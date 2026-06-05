@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion"; // ✅ Fixed: Added 'motion' import here
+import { AnimatePresence, motion } from "framer-motion"; // ✅ Fixed: Added 'motion' import here
 import Logo from "../../assets/vks logo.png";
 
 const Navbar = () => {
